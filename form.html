@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackathon Registration</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="form_style.css">
+</head>
+<body>
+    <div class="Navi">
+        <div class="Navigation_For_Pages">
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">TRACKS</a></li>
+                <li><a href="#">SCHEDULE</a></li>
+                <li><a href="#">PRIZE</a></li>
+                <li><a href="#">JUDGES</a></li>
+                <li><a href="#">IMAGES</a></li>
+                <li class="Register_but"><a href="#"><button class="Register_button">REGISTER</button></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1 class="form-title">
+            <span class="h11">BUILDATHON</span>
+            <span class="h22">REGISTRATION</span>
+        </h1>
+
+        <form id="registrationForm">
+            <div class="form-group">
+                <label for="teamSize">NUMBER OF TEAM MEMBERS</label>
+                <select id="teamSize" required>
+                    <option value="" disabled selected>SELECT TEAM SIZE</option>
+                    <option value="2">2 MEMBERS</option>
+                    <option value="3">3 MEMBERS</option>
+                    <option value="4">4 MEMBERS</option>
+                </select>
+                <div id="teamSizeError" class="error-message">PLEASE SELECT TEAM SIZE</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="teamName">TEAM NAME</label>
+                <input type="text" id="teamName" required placeholder="ENTER YOUR TEAM NAME">
+                <div id="teamNameError" class="error-message">TEAM NAME IS REQUIRED</div>
+            </div>
+            
+            <div class="form-group">
+                <label>TEAM LEADER DETAILS</label>
+                <input type="text" id="leaderName" required placeholder="LEADER NAME">
+                <div id="leaderNameError" class="error-message">LEADER NAME IS REQUIRED</div>
+                
+                <input type="email" id="leaderEmail" required placeholder="LEADER EMAIL" class="mt-3">
+                <div id="leaderEmailError" class="error-message">VALID EMAIL IS REQUIRED</div>
+                
+                <input type="tel" id="leaderPhone" required placeholder="LEADER PHONE" class="mt-3">
+                <div id="leaderPhoneError" class="error-message">VALID PHONE NUMBER IS REQUIRED</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="member1">MEMBER 1 NAME</label>
+                <input type="text" id="member1" required placeholder="MEMBER 1 NAME">
+                <div id="member1Error" class="error-message">MEMBER 1 NAME IS REQUIRED</div>
+            </div>
+            
+            <div id="member2Group" class="form-group member-fields">
+                <label for="member2">MEMBER 2 NAME</label>
+                <input type="text" id="member2" placeholder="MEMBER 2 NAME">
+                <div id="member2Error" class="error-message">MEMBER 2 NAME IS REQUIRED</div>
+            </div>
+            
+            <div id="member3Group" class="form-group member-fields">
+                <label for="member3">MEMBER 3 NAME</label>
+                <input type="text" id="member3" placeholder="MEMBER 3 NAME">
+                <div id="member3Error" class="error-message">MEMBER 3 NAME IS REQUIRED</div>
+            </div>
+            
+            <button type="submit" class="Register2">SUBMIT</button>
+        </form>
+    </div>
+
+    <script src="form_script.js"></script>
+</body>
+</html>

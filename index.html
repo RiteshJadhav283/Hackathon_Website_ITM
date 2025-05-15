@@ -24,10 +24,11 @@
                 <li><a href="#Home1">Home</a></li>
                 <li><a href="#About1">About</a></li>
                 <li><a href="#Tracks1">Tracks</a></li>
-                <li>Schedule</li>
-                <li>Prizes</li>
-                <li>Judges</li>
-                <li>FAQ</li>
+                <li><a href="#schedule">Schedule</a></li>
+                <li><a href="#prizes">Prizes</a></li>
+                <li><a href="#judges">Judges</a></li>
+                <li><a href="">Images</a></li>
+
             </ul>
             <div class="Register_but">
                 <button class="Register_button" style="font-family: 'Orbitron', sans-serif;">Register</button>
@@ -168,41 +169,116 @@
 </section>
 <!-- Track end -->
 
-
-<!-- Judges -->
-<section class="Judge" id="Judges1">
-
-    <div class="Jheading">
-        <h1 class="Jh1">Honorable Judges</h1>
+<!-- Schedule Section -->
+<section id="schedule" class="schedule-section">
+    <div class="container">
+        <h2 class="section-title">Event Timeline</h2>
+        <div class="holographic-timeline">
+            <div class="timeline-node">
+                <div class="node-glow"></div>
+                <div class="node-content">
+                    <h3>Day 1: Kickoff</h3>
+                    <div class="timeline-item">
+                        <p class="time">09:00 AM - Registration & Breakfast</p>
+                    </div>
+                    <div class="timeline-item">
+                        <p class="time">10:00 AM - Opening Ceremony & Hacking Begins</p>
+                    </div>
+                    <div class="timeline-item">
+                        <p class="time">01:00 PM - Team Introductions & Icebreakers</p>
+                    </div>
+                    <div class="timeline-item">
+                        <p class="time">07:00 PM - Dinner & Networking</p>
+                    </div>
+                    <div class="timeline-item">
+                        <p class="time">11:00 PM - Midnight Checkpoint</p>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-node">
+                <div class="node-glow"></div>
+                <div class="node-content">
+                    <h3>Day 2: Build & Submit</h3>
+                    <div class="timeline-item">
+                        <p class="time">06:00 AM - Sunrise Coffee & Check-in</p>
+                    </div>
+                    <div class="timeline-item">
+                        <p class="time">09:00 AM - Final Touches & Debugging</p>
+                    </div>
+                    <div class="timeline-item highlight">
+                        <p class="time">10:00 AM - Submission Deadline</p>
+                    </div>
+                    <div class="timeline-item">
+                        <p class="time">11:00 AM - Judging & Demo Fair</p>
+                    </div>
+                    <div class="timeline-item highlight">
+                        <p class="time">01:00 PM - Awards & Closing Ceremony</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="main_Jud_pic">
-        <div class="Sai_sir">
-            <div class="image_box">
-                <img class="sir1" width="100px" height="100px" src="/Images/Judges/SAi_sir.jpg">
-                <h3 class="hQuan">SaiKiran Sondarkar</h3>
+</section>
+
+<!-- Judges Section -->
+<section id="judges" class="judges-section">
+    <div class="container">
+        <h2 class="section-title">Meet Our Judges</h2>
+        <div class="judge-grid">
+            <div class="judge-card">
+                <div class="judge-image">
+                    <div class="holographic-effect"></div>
+                    <img src="/Images/Judges/1738955719788.jpg" alt="Swapnil Wable">
+                </div>
+                <h3>Swapnil Wable</h3>
+                <p class="judge-title">HOD ITM Skills University</p>
+                <p class="judge-expertise">Entrepreneurship</p>
             </div>
-        </div>
-        <div class="Swapnil_sir">
-            <div class="image_box">
-                <img class="sir2" width="100px" height="100px" src="/Images/Judges/1738955719788.jpg">
-                <h3 class="hQuan">Swapnil Wable</h3>
+            <div class="judge-card">
+                <div class="judge-image">
+                    <div class="holographic-effect"></div>
+                    <img src="/Images/Judges/SAi_sir.jpg" alt="Saikiran Sondarkar">
+                </div>
+                <h3>Saikiran Sondarkar</h3>
+                <p class="judge-title">CEO Lets Upgrade 🚀</p>
+                <p class="judge-expertise">Web3, Cryptography, AI/ML</p>
             </div>
-        </div>
-        <div class="Poonam_ma'am">
-            <div class="image_box">
-                <img class="sir3" width="100px" height="100px" src="/Images/Judges/Poonam_ma'am.jpg">
-                <h3 class="hQuan">Poonam Khanvilkar</h3>
-            </div>
-        </div>
-        <div class="Meet_sir">
-            <div class="image_box">
-                <img class="sir4" width="100px" height="100px" src="/Images/Judges/Meet_Sir.jpg">
-                <h3 class="hQuan">Meet Devlia </h3>
+            <div class="judge-card">
+                <div class="judge-image">
+                    <div class="holographic-effect"></div>
+                    <img src="/Images/Judges/Poonam_ma'am.jpg" alt="Poonam Khanvilkar">
+                </div>
+                <h3>Poonam Khanvilkar</h3>
+                <p class="judge-title">Educator & Mentor</p>
+                <p class="judge-expertise">Web Development, Python</p>
             </div>
         </div>
     </div>
+</section>
 
-
+<!-- Prizes Section -->
+<section id="prizes" class="prizes-section">
+    <div class="container">
+        <h2 class="section-title">Winning Rewards</h2>
+        <div class="prize-grid">
+            <div class="prize-card grand-prize">
+                <div class="prize-icon">🏆</div>
+                <h3>Grand Prize</h3>
+                <div class="prize-amount">₹2,50,000</div>
+            </div>
+            <div class="prize-card category-prize">
+                <div class="prize-icon">💡</div>
+                <h3>Best Innovation</h3>
+                <div class="prize-amount">₹1,50,000</div>
+            </div>
+            <div class="prize-card category-prize">
+                <div class="prize-icon">🌐</div>
+                <h3>Best Web3</h3>
+                <div class="prize-amount">₹1,00,000</div>
+            </div>
+        </div>
+    </div>
+</section>
 </section>
     <script src="/script.js"></script>
 </body>
