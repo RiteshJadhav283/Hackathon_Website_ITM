@@ -1,0 +1,351 @@
+
+/* Navigation CSS */
+.Navi
+{
+    height: 100px;
+    padding-left: 20px;
+    padding-top: 10px;
+    background-color: black;
+}
+.Navigation_For_Pages
+{
+    display: flex;
+}
+ul
+{
+    color: white;
+    display: flex;
+    list-style: none;
+    font-family: 'Orbitron', sans-serif;
+    justify-content: space-between;
+    width: 1200px;
+    padding-left: 0px;
+}
+.Register_but
+{
+    width: 90px;
+    padding-left:85px ;
+    padding-top: 5px;
+}
+.Register_button
+{
+    width: 100px;
+    height: 40px;
+    background-color: aqua;
+    border: 0px;
+    border-radius: 5px;
+
+}
+
+body
+{
+    background-color: black;
+}
+.Title_heading
+{
+    display: flex;
+    margin: 0px;
+    height: 50px;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+.h11, .h22 
+{
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 800;
+    letter-spacing: 5px;
+    margin: 0;
+}
+
+.h11 {
+    color: #00f0ff;
+    font-size: 40px;
+    text-shadow: 
+        0 0 10px #00f0ff,
+        0 0 20px #00f0ff,
+        0 0 40px rgba(0, 240, 255, 0.5),
+        0 0 80px rgba(0, 240, 255, 0.3);
+}
+
+.h22 {
+    color: #ff2d7b;
+    font-size: 40px;
+    text-shadow: 
+        0 0 10px #ff2d7b,
+        0 0 20px #ff2d7b,
+        0 0 40px rgba(255, 45, 123, 0.5),
+        0 0 80px rgba(255, 45, 123, 0.3);
+}
+.h33
+{
+    color: #00f0ff;
+    font-size: 40px;
+    text-shadow: 
+        0 0 10px #00f0ff,
+        0 0 20px #00f0ff,
+        0 0 40px rgba(0, 240, 255, 0.5),
+        0 0 80px rgba(0, 240, 255, 0.3);
+}
+.h44
+{
+    color: white;
+    font-size: 40px;
+    text-shadow: 
+        0 0 10px #00f0ff,
+        0 0 20px #00f0ff,
+        0 0 40px rgba(0, 240, 255, 0.5),
+        0 0 80px rgba(0, 240, 255, 0.3);
+}
+.h55
+{
+    color: #ff2d7b;
+    font-size: 40px;
+    text-shadow: 
+        0 0 10px #ff2d7b,
+        0 0 20px #ff2d7b,
+        0 0 40px rgba(255, 45, 123, 0.5),
+        0 0 80px rgba(255, 45, 123, 0.3);
+}
+.slogan
+{
+    padding-left: 50px;
+    font-family: 'Orbitron', sans-serif;
+
+}
+.section1
+{
+    padding-top: 60px;
+    display: flex;
+    height: 270px;
+}
+.Short_info
+{
+    font-family: 'Orbitron', sans-serif;
+    padding-left: 50px;
+    color: white;
+    font-size: 19px;
+}
+.Img_logog
+{
+    padding-left: 80px;
+}
+.timeBox
+{
+    font-size: 30px;
+    display: flex;
+    gap: 50px;
+    font-family: 'Orbitron', sans-serif;
+    color: aqua;
+    padding-left: 50px;
+}
+.time
+{
+    margin: 0%;
+}
+.Register2
+{
+    font-family: 'Orbitron', sans-serif;
+    background-color: #00f0ff;
+    border: 0px;
+    border-radius: 5px;
+    height: 35px;
+    width: 150px;
+    margin-left: 50px;
+    font-size: 20px;
+}
+.Learn_MOre
+{
+    font-family: 'Orbitron', sans-serif;
+    background-color: white;
+    color: aqua;
+    border: 0px;
+    border-radius: 5px;
+    height: 35px;
+    width: 150px;
+    font-size: 20px;    
+    margin-left: 50px;
+}
+.Sections
+{
+
+    /* background-color: #ff2d7b   ; */
+    /* margin-left: 15px;
+    margin-right: 15px; */
+    /* background-color: #101017; */
+    border: 2px solid black;
+    margin-bottom: 20px;
+    height: 700px;
+    
+}
+.heading2
+{
+    padding-left: 50px;
+    /* padding-top: 50px; */
+    display: flex;
+    gap: 10px;
+}
+.h11A,.h11A2
+{
+    font-family: 'Orbitron', sans-serif;
+    font-size: 40px;
+    color: white;
+}
+.h11A
+{
+    font-family: 'Orbitron', sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #ffffff;
+    text-shadow: 
+        0 0 8px rgba(255, 255, 255, 0.9),
+        0 0 16px rgba(255, 255, 255, 0.7),
+        0 0 32px rgba(255, 255, 255, 0.5);
+
+}
+.About_info
+{
+    padding-left: 50px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 15px;
+    color: white;
+}
+.Hours,.participants,.Prizes,.Tracks
+{
+    display: flex;
+    flex-direction: column;      /* Stack items vertically */
+    align-items: center;         /* Center horizontally */
+    justify-content: center;     /* Center vertically */
+    background-color: gray;
+    width: 300px;
+    height: 300px;
+    margin-left: 50px;
+    text-align: center;
+    border-radius: 15px;
+}
+.Hours:hover,.participants:hover,.Prizes:hover,.Tracks:hover,.AI_ML:hover,.Web3:hover,.AR_VR:hover,.Quantum:hover
+{
+    transform: scale(1.05);  
+    transition: all 1s;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
+}
+.box_about_info
+{
+    display: flex;
+    margin-top: 60px;
+}
+.h2Hours,.h2part,.h2Prize,.htracks
+{
+    font-family: 'Orbitron', sans-serif;
+    font-size: 95px;
+    margin: 0px;
+    color: #00f0ff;
+}
+.PHours,.PParti,.PPrize,.PTracks
+{
+    font-family: 'Orbitron', sans-serif;
+    font-size: 20px;
+    color: white;
+}
+.animation-container 
+{
+    /* background-color: #ff2d7b; */
+    width: 100%;
+    overflow: hidden; /* This hides the image when it goes outside the container */
+    position: relative;
+    height: 350px; /* Match the height of your image */
+}
+
+.running-character {
+    position: absolute;
+    animation: runAcross 5s linear infinite; /* Adjust time (5s) as needed */
+}
+
+@keyframes runAcross {
+    0% {
+        left: -400px; /* Start off-screen to the left */
+    }
+    100% {
+        left: 100%; /* Move to the right edge of the container */
+    }
+}
+.htrack
+{
+    padding-left: 50px;
+    background-color: black;
+    display: flex;
+    gap: 10px;
+}
+.ht1,.ht2
+{
+
+    font-family: 'Orbitron', sans-serif;
+    font-size: 40px;
+    color: white;
+    letter-spacing: 2px;
+}
+.ht1
+{
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #ffffff;
+    text-shadow: 
+        0 0 8px rgba(255, 255, 255, 0.9),
+        0 0 16px rgba(255, 255, 255, 0.7),
+        0 0 32px rgba(255, 255, 255, 0.5);
+}
+.ptrack
+{
+    background-color: black;
+    padding-left: 50px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 15px;
+    color: white;
+    margin-bottom: 40px;
+}
+.AI_ML,.Web3,.AR_VR,.Quantum
+{
+    display: flex;
+    flex-direction: column;      /* Stack items vertically */
+    align-items: center;         /* Center horizontally */
+    justify-content: center;     /* Center vertically */
+    background-color: gray;
+    width: 300px;
+    height: 300px;
+    margin-left: 50px;
+    text-align: center;
+    border-radius: 15px;
+}
+.box_track
+{
+    display: flex;
+}
+.image_box
+{
+    width: 300px;
+    display: flex;
+    padding-left: 80px;
+    font-family: 'Orbitron', sans-serif;
+    color: white;
+}
+.hAi,.hWeb,.hQuan
+{
+    padding-top: 20px;
+}
+.hAr
+{
+    padding-left: 20px;
+}
+.pQuan,.pAr,.pWeb,.pAi
+{
+    color:#00f0ff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 20px;
+}
+.sir1,.sir2,.sir3,.sir4
+{
+    border-radius: 50%;
+}
