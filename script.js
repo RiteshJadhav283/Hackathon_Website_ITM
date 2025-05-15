@@ -4,7 +4,7 @@ const Hours = document.getElementById('hours');
 const Minutes = document.getElementById('minutes');
 const Seconds = document.getElementById('seconds');
 
-const target_time = new Date("May 23 2025 00:00:00").getTime();
+const target_time = new Date("June 7 2025 00:00:00").getTime();
 
 function timer() {
     const currentDate = new Date().getTime();
@@ -23,9 +23,8 @@ function timer() {
 
 setInterval(timer, 1000);
 
-// Navigation functionality
-document.addEventListener('DOMContentLoaded', function() {
-    // Handle Register button click to go to form page
+document.addEventListener('DOMContentLoaded', function() 
+{
     const registerButtons = document.querySelectorAll('.Register_button, .Register2');
     registerButtons.forEach(button => {
         button.addEventListener('click', function(e) {
@@ -68,4 +67,32 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }, 1000);
     }
+});
+
+// Mobile menu functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
+    const navMenu = document.querySelector('.Navigation_For_Pages');
+    
+    menuToggle.addEventListener('click', function() {
+        this.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        
+        // Toggle body scroll when menu is open
+        if (navMenu.classList.contains('active')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+    });
+    
+    // Close menu when clicking on links
+    const navLinks = document.querySelectorAll('.Navigation_For_Pages a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            menuToggle.classList.remove('active');
+            navMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    });
 });

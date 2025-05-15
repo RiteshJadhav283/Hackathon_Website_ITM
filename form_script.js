@@ -155,3 +155,40 @@ document.addEventListener('DOMContentLoaded', function()
         });
     }
 });
+
+
+
+
+
+
+
+// Mobile Working Js
+const menuToggle = document.querySelector('.mobile-menu-toggle');
+const navMenu = document.querySelector('.Navigation_For_Pages');
+
+if (menuToggle) {
+    menuToggle.addEventListener('click', function() 
+    {
+
+        this.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        
+        if (navMenu.classList.contains('active')) 
+            {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+    });
+    
+    const navLinks = document.querySelectorAll('.Navigation_For_Pages a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            menuToggle.classList.remove('active');
+            navMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    });
+}
+
+

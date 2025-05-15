@@ -1,17 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    overflow-x: hidden;
+}
 
 /* Navigation CSS */
-.Navi
+.Navi 
 {
     height: 100px;
-    padding-left: 20px;
-    padding-top: 10px;
+    padding: 15px 20px;
     background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
 }
-.Navigation_For_Pages
+
+.Title_heading 
 {
     display: flex;
+    margin: 0;
+    height: 50px;
+    z-index: 1001;
 }
-ul
+
+.Navigation_For_Pages 
+{
+    display: flex;
+    align-items: center;
+}
+
+ul 
 {
     color: white;
     display: flex;
@@ -19,38 +45,47 @@ ul
     font-family: 'Orbitron', sans-serif;
     justify-content: space-between;
     width: 1200px;
-    padding-left: 0px;
+    padding-left: 0;
 }
-.Register_but
+
+.Register_but 
 {
     width: 90px;
-    padding-left:85px ;
+    padding-left: 85px;
     padding-top: 5px;
 }
-.Register_button
+
+.Register_button 
 {
     width: 100px;
     height: 40px;
     background-color: aqua;
-    border: 0px;
+    border: 0;
     border-radius: 5px;
-
+    font-family: 'Orbitron', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-body
+.Register_button:hover 
 {
-    background-color: black;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
 }
-.Title_heading
+
+a 
 {
-    display: flex;
-    margin: 0px;
-    height: 50px;
-}
-a{
     text-decoration: none;
     color: white;
+    transition: all 0.3s ease;
 }
+
+a:hover 
+{
+    color: #00f0ff;
+    text-shadow: 0 0 10px #00f0ff;
+}
+
 .h11, .h22 
 {
     font-family: 'Orbitron', sans-serif;
@@ -59,26 +94,7 @@ a{
     margin: 0;
 }
 
-.h11 {
-    color: #00f0ff;
-    font-size: 40px;
-    text-shadow: 
-        0 0 10px #00f0ff,
-        0 0 20px #00f0ff,
-        0 0 40px rgba(0, 240, 255, 0.5),
-        0 0 80px rgba(0, 240, 255, 0.3);
-}
-
-.h22 {
-    color: #ff2d7b;
-    font-size: 40px;
-    text-shadow: 
-        0 0 10px #ff2d7b,
-        0 0 20px #ff2d7b,
-        0 0 40px rgba(255, 45, 123, 0.5),
-        0 0 80px rgba(255, 45, 123, 0.3);
-}
-.h33
+.h11 
 {
     color: #00f0ff;
     font-size: 40px;
@@ -88,7 +104,50 @@ a{
         0 0 40px rgba(0, 240, 255, 0.5),
         0 0 80px rgba(0, 240, 255, 0.3);
 }
-.h44
+
+.h22 
+{
+    color: #ff2d7b;
+    font-size: 40px;
+    text-shadow: 
+        0 0 10px #ff2d7b,
+        0 0 20px #ff2d7b,
+        0 0 40px rgba(255, 45, 123, 0.5),
+        0 0 80px rgba(255, 45, 123, 0.3);
+}
+
+.Home 
+{
+    padding: 20px 0;
+}
+
+.section1 
+{
+    padding-top: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.slogan 
+{
+    padding-left: 50px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.h33 
+{
+    color: #00f0ff;
+    font-size: 40px;
+    text-shadow: 
+        0 0 10px #00f0ff,
+        0 0 20px #00f0ff,
+        0 0 40px rgba(0, 240, 255, 0.5),
+        0 0 80px rgba(0, 240, 255, 0.3);
+}
+
+.h44 
 {
     color: white;
     font-size: 40px;
@@ -98,7 +157,8 @@ a{
         0 0 40px rgba(0, 240, 255, 0.5),
         0 0 80px rgba(0, 240, 255, 0.3);
 }
-.h55
+
+.h55 
 {
     color: #ff2d7b;
     font-size: 40px;
@@ -108,30 +168,25 @@ a{
         0 0 40px rgba(255, 45, 123, 0.5),
         0 0 80px rgba(255, 45, 123, 0.3);
 }
-.slogan
+/* Tmg */
+.Img_logog 
 {
-    padding-left: 50px;
-    font-family: 'Orbitron', sans-serif;
-
+    max-width: 100%;
+    height: auto;
+    padding-left: 80px;
 }
-.section1
-{
-    padding-top: 60px;
-    display: flex;
-    height: 270px;
-}
-.Short_info
+/* info */
+.Short_info 
 {
     font-family: 'Orbitron', sans-serif;
     padding-left: 50px;
     color: white;
     font-size: 19px;
+    margin: 20px 0;
 }
-.Img_logog
-{
-    padding-left: 80px;
-}
-.timeBox
+
+/* Time */
+.timeBox 
 {
     font-size: 30px;
     display: flex;
@@ -139,63 +194,82 @@ a{
     font-family: 'Orbitron', sans-serif;
     color: aqua;
     padding-left: 50px;
+    flex-wrap: wrap;
 }
-.time
+
+.time 
 {
-    margin: 0%;
+    margin: 0;
+    text-align: center;
 }
-.Register2
+
+.Info_buttons 
+{
+    margin: 40px 0;
+}
+/* buttons for infor and regis */
+.Buttons_regi_learn 
+{
+    display: flex;
+    gap: 20px;
+    padding-left: 50px;
+}
+
+.Register2, .Learn_MOre 
 {
     font-family: 'Orbitron', sans-serif;
-    background-color: #00f0ff;
-    border: 0px;
+    border: 0;
     border-radius: 5px;
-    height: 35px;
+    height: 45px;
     width: 150px;
-    margin-left: 50px;
     font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
-.Learn_MOre
-{
-    font-family: 'Orbitron', sans-serif;
-    background-color: white;
-    color: aqua;
-    border: 0px;
-    border-radius: 5px;
-    height: 35px;
-    width: 150px;
-    font-size: 20px;    
-    margin-left: 50px;
-}
-.Sections
+
+.Register2 
 {
 
-    /* background-color: #ff2d7b   ; */
-    /* margin-left: 15px;
-    margin-right: 15px; */
-    /* background-color: #101017; */
+    background-color: #00f0ff;
+}
+
+.Learn_MOre 
+{
+    background-color: white;
+    color: #00f0ff;
+}
+
+.Register2:hover, .Learn_MOre:hover 
+{
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+}
+
+/* About Part */
+.Sections 
+{
     border: 2px solid black;
     margin-bottom: 20px;
-    height: 700px;
-    
+    padding: 40px 20px;
 }
-.heading2
+
+.heading2 
 {
     padding-left: 50px;
-    /* padding-top: 50px; */
     display: flex;
     gap: 10px;
+    flex-wrap: wrap;
 }
-.h11A,.h11A2
+
+.h11A, .h11A2 
 {
     font-family: 'Orbitron', sans-serif;
     font-size: 40px;
     color: white;
 }
-.h11A
+
+.h11A 
 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 40px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -204,100 +278,114 @@ a{
         0 0 8px rgba(255, 255, 255, 0.9),
         0 0 16px rgba(255, 255, 255, 0.7),
         0 0 32px rgba(255, 255, 255, 0.5);
-
 }
-.About_info
+
+.About_info 
 {
     padding-left: 50px;
     font-family: 'Orbitron', sans-serif;
     font-size: 15px;
     color: white;
+    max-width: 1200px;
+    margin: 20px 0;
 }
-.Hours,.participants,.Prizes,.Tracks 
+
+.box_about_info 
+{
+    display: flex;
+    margin-top: 60px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.Hours, .participants, .Prizes, .Tracks 
 {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
     width: 300px;
     height: 300px;
-    margin-left: 50px;
     text-align: center;
     border-radius: 20px;
-
     background: linear-gradient(145deg, #1a1f2f, #0f131e);
     border: 1px solid rgba(255, 255, 255, 0.08);
     color: #f0f4ff;
     box-shadow: inset 0 0 8px rgba(0, 255, 255, 0.05);
-
     transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
 }
 
-.Hours:hover,.participants:hover,.Prizes:hover,.Tracks:hover,.AI_ML:hover,.Web3:hover,.AR_VR:hover,.Quantum:hover 
+.Hours:hover, .participants:hover, .Prizes:hover, .Tracks:hover 
 {
     transform: scale(1.05);
     background: linear-gradient(145deg, #0e131f, #1a1f2f);
-    box-shadow:
-        0 0 20px rgba(0, 255, 255, 0.2),
-        0 8px 24px rgba(0, 255, 255, 0.1);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.2), 0 8px 24px rgba(0, 255, 255, 0.1);
 }
-.box_about_info
-{
-    display: flex;
-    margin-top: 60px;
-}
-.h2Hours,.h2part,.h2Prize,.htracks
+
+.h2Hours, .h2part, .h2Prize, .htracks 
 {
     font-family: 'Orbitron', sans-serif;
     font-size: 95px;
-    margin: 0px;
+    margin: 0;
     color: #00f0ff;
 }
-.PHours,.PParti,.PPrize,.PTracks
+
+.PHours, .PParti, .PPrize, .PTracks 
 {
     font-family: 'Orbitron', sans-serif;
     font-size: 20px;
     color: white;
 }
-.animation-container 
-{
-    /* background-color: #ff2d7b; */
+
+/* Pixel Char Running Animation */
+.animation-container {
     width: 100%;
     overflow: hidden;
     position: relative;
-    height: 350px; 
+    height: 350px;
 }
 
-.running-character {
+.running-character 
+{
+
     position: absolute;
-    animation: runAcross 5s linear infinite; 
+    animation: runAcross 15s linear infinite;
 }
 
-@keyframes runAcross {
+@keyframes runAcross 
+{
     0% {
-        left: -400px; 
+        left: -400px;
     }
     100% {
-        left: 100%; 
+        left: 100%;
     }
 }
-.htrack
+
+/* Tracks Part */
+.Track {
+    padding: 40px 20px;
+    background-color: black;
+}
+
+.htrack 
 {
     padding-left: 50px;
-    background-color: black;
     display: flex;
     gap: 10px;
+    flex-wrap: wrap;
 }
-.ht1,.ht2
-{
 
+.ht1, .ht2 
+{
     font-family: 'Orbitron', sans-serif;
     font-size: 40px;
     color: white;
     letter-spacing: 2px;
 }
-.ht1
+
+.ht1 
 {
     font-weight: 700;
     letter-spacing: 2px;
@@ -307,66 +395,73 @@ a{
         0 0 16px rgba(255, 255, 255, 0.7),
         0 0 32px rgba(255, 255, 255, 0.5);
 }
-.ptrack
+
+.ptrack 
 {
-    background-color: black;
     padding-left: 50px;
     font-family: 'Orbitron', sans-serif;
     font-size: 15px;
     color: white;
     margin-bottom: 40px;
 }
-.AI_ML,.Web3,.AR_VR,.Quantum
+
+.box_track 
 {
-display: flex;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 0 20px;
+}
+
+.AI_ML, .Web3, .AR_VR, .Quantum 
+{
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
     width: 300px;
     height: 300px;
-    margin-left: 50px;
     text-align: center;
     border-radius: 20px;
-
-    background: linear-gradient(145deg, #1a1f2f, #0f131e); 
+    background: linear-gradient(145deg, #1a1f2f, #0f131e);
     border: 1px solid rgba(255, 255, 255, 0.08);
     color: #f0f4ff;
     box-shadow: inset 0 0 8px rgba(0, 255, 255, 0.05);
-
     transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
 }
-.box_track
+
+.AI_ML:hover, .Web3:hover, .AR_VR:hover, .Quantum:hover 
 {
-    display: flex;
+    transform: scale(1.05);
+    background: linear-gradient(145deg, #0e131f, #1a1f2f);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.2), 0 8px 24px rgba(0, 255, 255, 0.1);
 }
-.image_box
+
+.image_box 
 {
-    width: 300px;
+    width: 100%;
     display: flex;
-    padding-left: 80px;
+    flex-direction: column;
+    align-items: center;
     font-family: 'Orbitron', sans-serif;
     color: white;
 }
-.hAi,.hWeb,.hQuan
+
+.hAi, .hWeb, .hQuan, .hAr 
 {
-    padding-top: 20px;
-}
-.hAr
-{
-    padding-left: 20px;
-}
-.pQuan,.pAr,.pWeb,.pAi
-{
-    color:#00f0ff;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 20px;
-}
-.sir1,.sir2,.sir3,.sir4
-{
-    border-radius: 50%;
+    margin-top: 20px;
 }
 
+.pQuan, .pAr, .pWeb, .pAi 
+{
+    color: #00f0ff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 20px;
+    padding: 0 20px;
+}
+
+/* Schedule Parts */
 .schedule-section 
 {
     background-color: #0d0d1a;
@@ -455,9 +550,10 @@ display: flex;
 
 .timeline-item.highlight p:hover 
 {
-
     background: rgba(255, 0, 153, 0.2);
 }
+
+/* Judges pART */
 .judges-section 
 {
     padding: 80px 0;
@@ -495,7 +591,6 @@ display: flex;
 }
 
 .judge-card:hover 
-
 {
     transform: translateY(-8px);
     box-shadow: 0 0 20px rgba(0, 255, 255, 0.15);
@@ -553,6 +648,7 @@ display: flex;
     display: inline-block;
     margin-top: 10px;
 }
+
 .prizes-section 
 {
     padding: 80px 20px;
@@ -632,4 +728,268 @@ display: flex;
 {
     background: linear-gradient(145deg, rgba(138, 43, 226, 0.1), rgba(255, 255, 255, 0.02));
     border: 1px solid rgba(138, 43, 226, 0.2);
+}
+
+
+
+
+
+
+
+
+
+/* Fulling Mobile Part to Make it Mobile Respoinsinv */
+
+.mobile-menu-toggle 
+{
+    display: none;
+    background: transparent;
+    border: none;
+    width: 40px;
+    height: 40px;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0;
+    cursor: pointer;
+    z-index: 1000;
+    position: absolute;
+    right: 20px;
+    top: 30px;
+}
+
+.mobile-menu-toggle span 
+{
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) 
+{
+    transform: rotate(45deg) translate(5px, 5px);
+}
+.mobile-menu-toggle.active span:nth-child(2) 
+{
+    opacity: 0;
+}
+.mobile-menu-toggle.active span:nth-child(3) 
+{
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 768px) {
+    /* Navigation */
+    .Navi 
+    {
+        height: auto;
+        padding: 15px;
+        position: relative;
+    }
+    
+    .mobile-menu-toggle 
+    {
+        display: flex;
+    }
+    
+    .Navigation_For_Pages 
+    {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.95);
+        flex-direction: column;
+        padding: 80px 20px 20px;
+        transition: right 0.3s ease;
+        z-index: 999;
+    }
+    
+    .Navigation_For_Pages.active 
+    {
+        right: 0;
+    }
+    
+    .Navigation_For_Pages ul 
+    {
+        flex-direction: column;
+        width: 100%;
+        gap: 20px;
+    }
+    
+    .Register_but 
+    {
+        padding: 20px 0 0;
+        width: 100%;
+        text-align: center;
+    }
+    
+    /* Home section adjustments */
+    .section1 
+    {
+        flex-direction: column;
+        height: auto;
+        padding-top: 30px;
+        text-align: center;
+    }
+    
+    .slogan 
+    {
+        padding-left: 0;
+        margin-bottom: 30px;
+    }
+    
+    .Img_logog 
+    {
+        width: 100%;
+        max-width: 300px;
+        padding: 0;
+        margin: 0 auto;
+        display: block;
+    }
+    
+    /* Timer adjustments */
+    .timeBox 
+    {
+        justify-content: center;
+        gap: 20px;
+        padding-left: 0;
+    }
+    
+    .Short_info 
+    {
+        padding-left: 0;
+        text-align: center;
+    }
+    
+    /* Buttons */
+    .Buttons_regi_learn 
+    {
+        justify-content: center;
+        padding-left: 0;
+    }
+    
+    /* About section */
+    .heading2, .About_info 
+    {
+        padding-left: 0;
+        text-align: center;
+    }
+    
+    .box_about_info
+    {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .Hours, .participants, .Prizes, .Tracks 
+    {
+        margin-left: 0;
+        width: 80%;
+    }
+    
+    /* Tracks section */
+    .htrack, .ptrack 
+    {
+        padding-left: 0;
+        text-align: center;
+        justify-content: center;
+    }
+    
+    .box_track 
+    {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .AI_ML, .Web3, .AR_VR, .Quantum 
+    {
+        margin-left: 0;
+        width: 80%;
+    }
+    
+    /* Running animation */
+    .running-character 
+    {
+        width: 200px;
+        height: 200px;
+    }
+    
+    /* Adjust font sizes */
+    .h11, .h22, .h33, .h44, .h55, .h11A, .h11A2 
+    {
+        font-size: 28px;
+    }
+    
+    .h2Hours, .h2part, .h2Prize, .htracks 
+    {
+        font-size: 60px;
+    }
+    
+    /* Schedule section */
+    .timeline-node 
+    {
+        margin-bottom: 30px;
+    }
+    
+    .node-content h3 
+    {
+        font-size: 1.5rem;
+    }
+    
+    /* Judges section */
+    .judge-grid 
+    {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Prizes section */
+    .prize-grid 
+    {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media only screen and (max-width: 480px) 
+{
+    .h11, .h22 
+    {
+        font-size: 24px;
+        letter-spacing: 2px;
+    }
+    
+    .h33, .h44, .h55, .h11A, .h11A2 
+    {
+        font-size: 22px;
+    }
+    
+    .timeBox 
+    {
+        font-size: 24px;
+    }
+    
+    .Register_button, .Register2, .Learn_MOre 
+    {
+        width: 120px;
+        font-size: 16px;
+    }
+    
+    .Hours, .participants, .Prizes, .Tracks,
+    .AI_ML, .Web3, .AR_VR, .Quantum 
+    {
+        width: 90%;
+        height: 250px;
+    }
+    
+    .h2Hours, .h2part, .h2Prize, .htracks 
+    {
+        font-size: 50px;
+    }
 }
