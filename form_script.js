@@ -192,3 +192,33 @@ if (menuToggle) {
 }
 
 
+
+
+
+
+
+
+//For Forms 
+document.getElementById('registrationForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    fetch('Yhttps://script.google.com/macros/s/AKfycbwXmSm_kxzjRNZ5K_okbodlQx05F2Qj_bfyerfNOSzI2lC46iJK5viQsKx0cASmFB4fOg/exec', {
+      method: 'POST',
+      body: JSON.stringify({
+        teamSize: document.getElementById('teamSize').value,
+        teamName: document.getElementById('teamName').value,
+        leaderName: document.getElementById('leaderName').value,
+        leaderEmail: document.getElementById('leaderEmail').value,
+        leaderPhone: document.getElementById('leaderPhone').value,
+        member1: document.getElementById('member1').value,
+        member2: document.getElementById('member2').value,
+        member3: document.getElementById('member3').value
+      }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(response => response.json())
+    .then(data => alert('Registration submitted!'))
+    .catch(error => alert('Submission failed!'));
+  });
+  
