@@ -65,9 +65,25 @@ document.addEventListener('DOMContentLoaded', function()
 
     const form = document.getElementById('registrationForm');
     
+    // Add debugging to form element
+    console.log('Form element found:', form);
+    
+    // Add submission lock to prevent multiple submissions
+    let isSubmitting = false;
+    
     form.addEventListener('submit', function(e) 
     {
+        console.log('Submit event triggered!'); // Debug log
         e.preventDefault();
+        
+        // Prevent multiple submissions
+        if (isSubmitting) {
+            console.log('Form is already being submitted, ignoring duplicate submission');
+            return;
+        }
+        
+        console.log('Form submission started...'); // Debug log
+        
         let isValid = true;
         
         document.querySelectorAll('.error-message').forEach(el => {
@@ -76,6 +92,7 @@ document.addEventListener('DOMContentLoaded', function()
         
         if (!teamSizeSelect.value) 
         {
+            console.log('Team size validation failed'); // Debug log
             document.getElementById('teamSizeError').style.display = 'block';
             isValid = false;
         }
@@ -83,29 +100,34 @@ document.addEventListener('DOMContentLoaded', function()
         const teamName = document.getElementById('teamName').value.trim();
         if (!teamName) 
         {
+            console.log('Team name validation failed'); // Debug log
             document.getElementById('teamNameError').style.display = 'block';
             isValid = false;
         }
         
         const leaderName = document.getElementById('leaderName').value.trim();
         if (!leaderName) {
+            console.log('Leader name validation failed'); // Debug log
             document.getElementById('leaderNameError').style.display = 'block';
             isValid = false;
         }
         
         const leaderEmail = document.getElementById('leaderEmail').value.trim();
         if (!leaderEmail || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(leaderEmail)) {
+            console.log('Leader email validation failed'); // Debug log
             document.getElementById('leaderEmailError').style.display = 'block';
             isValid = false;
         }
         const leaderPhone = document.getElementById('leaderPhone').value.trim();
         if (!leaderPhone || !/^[\d\s\-+]{8,}$/.test(leaderPhone)) {
+            console.log('Leader phone validation failed'); // Debug log
             document.getElementById('leaderPhoneError').style.display = 'block';
             isValid = false;
         }
         
         const member1 = document.getElementById('member1').value.trim();
         if (!member1) {
+            console.log('Member 1 validation failed'); // Debug log
             document.getElementById('member1Error').style.display = 'block';
             isValid = false;
         }
@@ -113,6 +135,7 @@ document.addEventListener('DOMContentLoaded', function()
         if (member2Group.style.display === 'block') {
             const member2 = document.getElementById('member2').value.trim();
             if (!member2) {
+                console.log('Member 2 validation failed'); // Debug log
                 document.getElementById('member2Error').style.display = 'block';
                 isValid = false;
             }
@@ -121,16 +144,126 @@ document.addEventListener('DOMContentLoaded', function()
         if (member3Group.style.display === 'block') {
             const member3 = document.getElementById('member3').value.trim();
             if (!member3) {
+                console.log('Member 3 validation failed'); // Debug log
                 document.getElementById('member3Error').style.display = 'block';
                 isValid = false;
             }
         }
         
+        console.log('Form validation result:', isValid); // Debug log
+        
         if (isValid) {
-            alert('REGISTRATION SUCCESSFUL! GOOD LUCK HACKERS!');
-            form.reset();
-            member2Group.style.display = 'none';
-            member3Group.style.display = 'none';
+            console.log('Form is valid, starting submission...'); // Debug log
+            
+            // Set submission lock
+            isSubmitting = true;
+            
+            // Disable submit button and change text
+            const submitButton = document.querySelector('button[type="submit"]');
+            if (submitButton) {
+                submitButton.disabled = true;
+                submitButton.textContent = 'SUBMITTING...';
+                submitButton.style.opacity = '0.7';
+                submitButton.style.cursor = 'not-allowed';
+            }
+            
+            // Submit to Google Sheets
+            const scriptUrl = 'https://script.google.com/macros/s/AKfycbyF6lVa_5vUiNiyvqDxag-3Kyp95QMQBQ7Jrocu0Ba4DupVGI_rEbb6TXSAyBCI5lc4/exec';
+            
+            // Create URL parameters for Google Apps Script
+            const params = new URLSearchParams();
+            params.append('teamSize', document.getElementById('teamSize').value);
+            params.append('teamName', document.getElementById('teamName').value);
+            params.append('leaderName', document.getElementById('leaderName').value);
+            params.append('leaderEmail', document.getElementById('leaderEmail').value);
+            params.append('leaderPhone', document.getElementById('leaderPhone').value);
+            params.append('member1', document.getElementById('member1').value);
+            params.append('member2', document.getElementById('member2').value);
+            params.append('member3', document.getElementById('member3').value);
+
+            console.log('=== FORM DATA BEING SENT ===');
+            console.log('Script URL:', scriptUrl);
+            console.log('Team Size:', document.getElementById('teamSize').value);
+            console.log('Team Name:', document.getElementById('teamName').value);
+            console.log('Leader Name:', document.getElementById('leaderName').value);
+            console.log('Leader Email:', document.getElementById('leaderEmail').value);
+            console.log('Leader Phone:', document.getElementById('leaderPhone').value);
+            console.log('Member 1:', document.getElementById('member1').value);
+            console.log('Member 2:', document.getElementById('member2').value);
+            console.log('Member 3:', document.getElementById('member3').value);
+            console.log('URL Parameters:', params.toString());
+            console.log('==========================');
+
+            // Method 1: Using URLSearchParams (most reliable for Google Apps Script)
+            console.log('Sending POST request to:', scriptUrl);
+            fetch(scriptUrl, {
+                method: 'POST',
+                body: params,
+                mode: 'no-cors'
+            })
+            .then(response => {
+                console.log('POST Response received:', response);
+                console.log('Response status:', response.status);
+                console.log('Response type:', response.type);
+                alert('REGISTRATION SUCCESSFUL! GOOD LUCK HACKERS!');
+                form.reset();
+                member2Group.style.display = 'none';
+                member3Group.style.display = 'none';
+                
+                // Reset submission lock and button
+                isSubmitting = false;
+                if (submitButton) {
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'SUBMIT';
+                    submitButton.style.opacity = '1';
+                    submitButton.style.cursor = 'pointer';
+                }
+            })
+            .catch(error => {
+                console.error('POST Fetch error:', error);
+                
+                // Method 2: Try with GET request as fallback
+                const getUrl = scriptUrl + '?' + params.toString();
+                console.log('Trying GET request as fallback:', getUrl);
+                fetch(getUrl, {
+                    method: 'GET',
+                    mode: 'no-cors'
+                })
+                .then(response => {
+                    console.log('GET fallback response:', response);
+                    console.log('GET Response status:', response.status);
+                    console.log('GET Response type:', response.type);
+                    alert('REGISTRATION SUCCESSFUL! GOOD LUCK HACKERS!');
+                    form.reset();
+                    member2Group.style.display = 'none';
+                    member3Group.style.display = 'none';
+                    
+                    // Reset submission lock and button
+                    isSubmitting = false;
+                    if (submitButton) {
+                        submitButton.disabled = false;
+                        submitButton.textContent = 'SUBMIT';
+                        submitButton.style.opacity = '1';
+                        submitButton.style.cursor = 'pointer';
+                    }
+                })
+                .catch(fallbackError => {
+                    console.error('GET fallback error:', fallbackError);
+                    alert('Registration failed! Please check your internet connection and try again.');
+                    
+                    // Reset submission lock and button on error
+                    isSubmitting = false;
+                    if (submitButton) {
+                        submitButton.disabled = false;
+                        submitButton.textContent = 'SUBMIT';
+                        submitButton.style.opacity = '1';
+                        submitButton.style.cursor = 'pointer';
+                    }
+                });
+            });
+        } else {
+            console.log('Form validation failed, not submitting'); // Debug log
+            alert('Please fill in all required fields correctly.');
         }
     });
 
@@ -154,13 +287,16 @@ document.addEventListener('DOMContentLoaded', function()
             });
         });
     }
+
+    // Add click event listener to submit button as backup
+    const submitButton = document.querySelector('button[type="submit"]');
+    if (submitButton) {
+        console.log('Submit button found:', submitButton);
+        submitButton.addEventListener('click', function(e) {
+            console.log('Submit button clicked!');
+        });
+    }
 });
-
-
-
-
-
-
 
 // Mobile Working Js
 const menuToggle = document.querySelector('.mobile-menu-toggle');
@@ -190,35 +326,4 @@ if (menuToggle) {
         });
     });
 }
-
-
-
-
-
-
-
-
-//For Forms 
-document.getElementById('registrationForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    fetch('Yhttps://script.google.com/macros/s/AKfycbwXmSm_kxzjRNZ5K_okbodlQx05F2Qj_bfyerfNOSzI2lC46iJK5viQsKx0cASmFB4fOg/exec', {
-      method: 'POST',
-      body: JSON.stringify({
-        teamSize: document.getElementById('teamSize').value,
-        teamName: document.getElementById('teamName').value,
-        leaderName: document.getElementById('leaderName').value,
-        leaderEmail: document.getElementById('leaderEmail').value,
-        leaderPhone: document.getElementById('leaderPhone').value,
-        member1: document.getElementById('member1').value,
-        member2: document.getElementById('member2').value,
-        member3: document.getElementById('member3').value
-      }),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
-    .then(response => response.json())
-    .then(data => alert('Registration submitted!'))
-    .catch(error => alert('Submission failed!'));
-  });
   

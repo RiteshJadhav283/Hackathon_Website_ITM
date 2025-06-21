@@ -4,7 +4,7 @@ const Hours = document.getElementById('hours');
 const Minutes = document.getElementById('minutes');
 const Seconds = document.getElementById('seconds');
 
-const target_time = new Date("June 7 2025 00:00:00").getTime();
+const target_time = new Date("June 23 2025 00:00:00").getTime();
 
 function timer() {
     const currentDate = new Date().getTime();

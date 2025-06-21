@@ -183,11 +183,28 @@ input:focus, select:focus {
     margin-top: 1rem;
     text-transform: uppercase;
     letter-spacing: 2px;
+    position: relative;
+    z-index: 10;
+    pointer-events: auto;
 }
 
 .Register2:hover {
     transform: translateY(-2px);
     box-shadow: 0 0 20px #00f0ff;
+}
+
+.Register2:active {
+    transform: translateY(0);
+    box-shadow: 0 0 10px #00f0ff;
+}
+
+/* Debug styles for button visibility */
+.Register2[style*="background-color: #ff2d7b"] {
+    background-color: #ff2d7b !important;
+}
+
+.Register2[style*="background-color: #ff2d7b"]:hover {
+    box-shadow: 0 0 20px #ff2d7b;
 }
 
 .member-fields {
